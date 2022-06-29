@@ -1,0 +1,27 @@
+$size: 4rem;
+
+.container {
+    width: $size;
+    height: $size;
+
+    border: 1px solid black;
+    background: #2a2b35;
+
+    border-radius: calc($size / 2);
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+
+    overflow: hidden;
+
+    &:hover,
+    &:active {
+        background: #4e4e57;
+    }
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ImageService } from '../services/image/image.service';
 
 @Component({
   selector: 'app-components',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComponentsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private image: ImageService) { }
 
   ngOnInit(): void {
   }
 
+  onClick() {
+    this.image.search(["waterfall", "people"]).subscribe((data) => {console.log(data)})
+  }
+
 }
+  
