@@ -1,27 +1,83 @@
 $size: 4rem;
 
 .container {
-    width: $size;
-    height: $size;
+  position: relative;
 
-    border: 1px solid black;
-    background: #2a2b35;
+  width: $size;
+  height: $size;
 
-    border-radius: calc($size / 2);
+  border: 1px solid black;
+  background: #2a2b35;
 
-    color: white;
+  border-radius: calc($size / 2);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  color: white;
 
-    font-size: 1.5rem;
-    line-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    overflow: hidden;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
 
-    &:hover,
-    &:active {
-        background: #4e4e57;
+  overflow: hidden;
+
+  &.loading-icon {
+    color: #2a2b35;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:active {
+    background: #4e4e57;
+    &.loading-icon {
+      color: #4e4e57;
+      pointer-events: none;
     }
+  }
+}
+
+.loading-spinner {
+  transition: opacity 200ms linear;
+
+  animation: spin 1.5s ease-in-out infinite;
+
+  position: absolute;
+
+  top: 10%;
+  left: 10%;
+
+  width: 80%;
+  height: 80%;
+
+  border: 6px solid #2a2b35;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+
+  &:hover,
+  &:active {
+    border: 6px solid #4e4e57;
+    border-top: 6px solid #3498db;
+  }
+}
+
+.not-loading {
+  opacity: 0;
+  animation-play-state: paused;
+
+}
+
+.loading {
+  opacity: 1;
+  animation-play-state: running;
+
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

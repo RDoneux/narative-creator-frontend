@@ -1,3 +1,7 @@
-<div class="container" (click)="onClick($event)">
+<div class="container" [ngClass]="{'loading-icon': isLoading}" (click)="onClick($event)">
+    <div class="loading-spinner" [ngClass]="{'loading': isLoading, 'not-loading': !isLoading}"></div>
+
     <ng-content></ng-content>
 </div>
+<!-- [ngClass]="{'loading': isLoading}"  -->
+

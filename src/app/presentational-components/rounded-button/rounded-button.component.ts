@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-rounded-button',
@@ -6,6 +6,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./rounded-button.component.scss']
 })
 export class RoundedButtonComponent implements OnInit {
+
+  @Input() isLoading: boolean = true;
 
   @Output() clicked: EventEmitter<Event> = new EventEmitter();
 
