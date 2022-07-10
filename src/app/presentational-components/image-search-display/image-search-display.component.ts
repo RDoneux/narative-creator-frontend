@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-character-modal-image-view',
-  templateUrl: './character-modal-image-view.component.html',
-  styleUrls: ['./character-modal-image-view.component.scss'],
+  selector: 'app-image-search-display',
+  templateUrl: './image-search-display.component.html',
+  styleUrls: ['./image-search-display.component.scss'],
 })
-export class CharacterModalImageViewComponent implements OnInit {
+export class ImageSearchDisplayComponent {
   @Input() sourceUrls: any | undefined = undefined;
   @Input() pageNumber: number | undefined = undefined;
   @Input() hasNextPage: boolean = false;
@@ -19,8 +19,6 @@ export class CharacterModalImageViewComponent implements OnInit {
   totalPagesRounded: number = 0;
 
   constructor() {}
-
-  ngOnInit(): void {}
 
   ngOnChanges() {
     this.totalPagesRounded = Math.round(this.totalPages);

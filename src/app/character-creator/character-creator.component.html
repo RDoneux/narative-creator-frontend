@@ -1,7 +1,5 @@
 <app-modal *ngIf="showModal" (modalClosed)="onCloseModal()">
-  <app-character-creator-modal
-    (imageSelected)="onImageChanged($event)"
-  ></app-character-creator-modal>
+  <app-image-search (imageSelected)="onImageChanged($event)"></app-image-search>
 </app-modal>
 <div class="container">
   <app-character-thumbnail

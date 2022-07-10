@@ -16,9 +16,10 @@ import { CharacterCreatorComponent } from './character-creator/character-creator
 import { ModalComponent } from './presentational-components/modal/modal.component';
 import { CharacterCreatorModalComponent } from './character-creator/character-creator-modal/character-creator-modal.component';
 import { SearchBarComponent } from './presentational-components/search-bar/search-bar.component';
-import { CharacterModalImageViewComponent } from './character-creator/character-creator-modal/character-modal-image-view/character-modal-image-view.component';
 import { LoadingSpinnerComponent } from './presentational-components/loading-spinner/loading-spinner.component';
 import { PaginationComponent } from './presentational-components/pagination/pagination.component';
+import { ImageSearchComponent } from './presentational-components/image-search-display/image-search/image-search.component';
+import { ImageSearchDisplayComponent } from './presentational-components/image-search-display/image-search-display.component';
 
 
 @NgModule({
@@ -34,9 +35,10 @@ import { PaginationComponent } from './presentational-components/pagination/pagi
     ModalComponent,
     CharacterCreatorModalComponent,
     SearchBarComponent,
-    CharacterModalImageViewComponent,
     LoadingSpinnerComponent,
     PaginationComponent,
+    ImageSearchComponent,
+    ImageSearchDisplayComponent,
   ],
   imports: [
     BrowserModule,
