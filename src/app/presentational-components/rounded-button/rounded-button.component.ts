@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class RoundedButtonComponent implements OnInit {
 
-  @Input() isLoading: boolean = true;
+  @Input() isLoading: boolean = false;
 
   @Output() clicked: EventEmitter<Event> = new EventEmitter();
 

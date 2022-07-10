@@ -1,0 +1,25 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: rgb(0, 0, 0, 0.8);
+  z-index: 100;
+  .content {
+    width: fit-content;
+    height: fit-content;
+    background: white;
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    .close {
+      // text-align: right;
+      padding: 0.2rem 1rem;
+      font-size: 1.5rem;
+      font-family: "Edu TAS Beginner", cursive;
+      color: gray;
+      background: transparent;
+      position: absolute;
+      right: 0;
+    }
+  }
+}

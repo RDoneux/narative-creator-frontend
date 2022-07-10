@@ -1,0 +1,10 @@
+<div
+  class="container"
+  [ngStyle]="{ width: componentWidth + 'px', height: componentHeight + 'px' }"
+>
+  <div
+    class="spinner"
+    [ngClass]="{ spinning: loading, stopped: !loading }"
+    [ngStyle]="{'border-width': borderThickness + 'px', 'border-top-color': borderColour}"
+  ></div>
+</div>

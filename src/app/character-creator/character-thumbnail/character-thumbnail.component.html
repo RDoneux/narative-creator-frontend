@@ -1,0 +1,14 @@
+<div
+  class="container"
+  [ngStyle]="{ width: width ? width : '', height: height ? height : '' }"
+>
+  <img
+    class="image"
+    [ngStyle]="{ 'object-position': position }"
+    [src]="source"
+    [alt]="altText"
+  />
+  <app-rounded-button class="rounded-button" (clicked)="onButtonClick($event)">
+    <i class="fa-solid fa-pen"></i>
+  </app-rounded-button>
+</div>

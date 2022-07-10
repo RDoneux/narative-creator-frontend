@@ -1,0 +1,6 @@
+<div class="container" (click)="onModalClose($event)">
+  <div class="content" (click)="$event.stopPropagation()">
+    <div class="close"><span (click)="onModalClose($event)">x</span></div>
+    <ng-content></ng-content>
+  </div>
+</div>

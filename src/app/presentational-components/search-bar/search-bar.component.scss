@@ -1,0 +1,36 @@
+.search-bar-wrapper {
+  border-radius: 1.4rem;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+  display: flex;
+  background: rgb(214, 214, 214);
+  &:focus-within {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+  }
+
+  .input-box {
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    background: transparent;
+    width: 90%;
+  
+    padding-left: 1.5rem;
+    font-family: 'Edu TAS Beginner', cursive;
+  }
+
+  .search-button-wrapper {
+    width: 10%;
+    font-size: 1.4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.5rem 2rem 0.5rem 1.5rem;
+
+    border-radius: 0 1.4rem 1.4rem 0;
+
+    background: rgb(112, 170, 162);
+    border: 2px solid rgb(112, 170, 162);
+  }
+}

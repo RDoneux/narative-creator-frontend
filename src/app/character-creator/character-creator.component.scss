@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  app-page-title {
+    position: fixed;
+    top: 1rem;
+    left: 0;
+    width: 100%;
+  }
+  app-character-thumbnail {
+    height: 40%;
+  }
+}

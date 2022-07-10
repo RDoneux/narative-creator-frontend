@@ -1,17 +1,48 @@
 <div class="container">
+  <div class="component-wrapper">
+    <app-editable-text-input [placeholder]="'Your text here'">
+    </app-editable-text-input>
+  </div>
 
-    <div class="component-wrapper">
-        <app-editable-text-input 
-            [placeholder]="'Your text here'">
-        </app-editable-text-input>
-    </div> 
+  <div class="component-wrapper">
+    <app-rounded-button [isLoading]="buttonLoading" (clicked)="onClick()">
+      <i class="fa-solid fa-plus"></i>
+    </app-rounded-button>
+  </div>
 
-    <div class="component-wrapper">
-        <app-rounded-button
-            [isLoading]="buttonLoading"
-            (clicked)="onClick()">
-            <i class="fa-solid fa-plus"></i>
-        </app-rounded-button>
-    </div> 
+  <div class="component-wrapper">
+    <app-page-title class="page-title-styles" [value]="'Test Page Title'">
+    </app-page-title>
+
+    <app-character-thumbnail
+      class="thumbnail-styles"
+      [source]="
+        'https://images.pexels.com/photos/1816237/pexels-photo-1816237.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200'
+      "
+      [position]="'bottom'"
+    >
+    </app-character-thumbnail>
+  </div>
+
+  <div class="component-wrapper">
+    <app-page-title class="page-title-styles" [value]="'Test Page Title'">
+    </app-page-title>
+  </div>
+
+  <div class="component-wrapper">
+    <app-text-editor class="text-editor"></app-text-editor>
+  </div>
+
+  <div class="component-wrapper">
+    <app-search-bar></app-search-bar>
+  </div>
+
+  <div class="component-wrapper">
+    <app-character-modal-image-view class="character-modal" [sourceUrls]="images"></app-character-modal-image-view>
+  </div>
+
+  <div class="component-wrapper">
+    <app-pagination></app-pagination>
+  </div>
 
 </div>

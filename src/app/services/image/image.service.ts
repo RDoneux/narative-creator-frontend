@@ -17,4 +17,13 @@ export class ImageService {
       },
     });
   }
+
+  changePage(url: string): Observable<any> {
+    return this.api.get(url, {
+      headers: {
+        Authorization:
+          '563492ad6f917000010000016e45d0e1dd39438ab078dd0dfd61c0af',
+      },
+    });
+  }
 }

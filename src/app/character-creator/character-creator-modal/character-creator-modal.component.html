@@ -1,0 +1,41 @@
+<div class="container">
+  <h1
+    class="text text-header"
+    [ngStyle]="{
+      opacity: data ? 0 : 1,
+      'max-height': data ? 0 : 200 + 'px',
+      'margin-bottom': data ? 0 : 4 + 'rem'
+    }"
+  >
+    Search for an image
+  </h1>
+  <app-search-bar
+    class="search-bar"
+    [debounceTime]="1000"
+    [isLoading]="isLoading"
+    [placeholder]="'Press enter to search'"
+    (changed)="onSearchTermChanged($event)"
+  ></app-search-bar>
+  <h4
+    class="text text-footer"
+    [ngStyle]="{
+      opacity: data ? 0 : 1,
+      'max-height': data ? 0 : 200 + 'px',
+      'margin-top': data ? 0 : 2 + 'rem'
+    }"
+  >
+    There are over 100000 to choose from...
+  </h4>
+  <app-character-modal-image-view
+    class="character-modal"
+    [ngStyle]="{ height: data ? 85 + '%' : 0 }"
+    [sourceUrls]="data?.photos"
+    [pageNumber]="data?.page"
+    [totalPages]="data?.total_results / data?.per_page"
+    [hasNextPage]="data?.next_page"
+    [hasPreviousPage]="data?.prev_page"
+    (nextPage)="onNextPage($event)"
+    (previousPage)="onPreviousPage($event)"
+    (imageClicked)="onImageClicked($event)"
+  ></app-character-modal-image-view>
+</div>

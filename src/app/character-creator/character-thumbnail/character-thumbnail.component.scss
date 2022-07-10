@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+  }
+  .rounded-button {
+    opacity: 0;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;  
+
+    transition: opacity 200ms linear;
+  }
+
+  &:hover {
+    .rounded-button {
+        opacity: 1;
+    }
+  }
+}

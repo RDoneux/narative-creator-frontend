@@ -1,0 +1,17 @@
+<app-modal *ngIf="showModal" (modalClosed)="onCloseModal()">
+  <app-character-creator-modal
+    (imageSelected)="onImageChanged($event)"
+  ></app-character-creator-modal>
+</app-modal>
+<div class="container">
+  <app-character-thumbnail
+    [source]="thumbNailUrl"
+    [height]="'40%'"
+    [position]="'top'"
+    (buttonClicked)="onChangeCharacterThumbnail($event)"
+  ></app-character-thumbnail>
+  <app-page-title [value]="pageTitle"></app-page-title>
+  <app-editable-text-input
+    [placeholder]="'Characters name'"
+  ></app-editable-text-input>
+</div>

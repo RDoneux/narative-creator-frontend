@@ -1,0 +1,25 @@
+<div class="search-bar-wrapper">
+  <input
+    class="input-box"
+    type="text"
+    (ngModelChange)="onChange($event)"
+    [placeholder]="placeholder"
+    [(ngModel)]="value"
+    (keyup.enter)="submitted()"
+  />
+  <div class="search-button-wrapper">
+    <i
+      *ngIf="!isLoading"
+      class="fa-solid fa-magnifying-glass"
+      (click)="submitted()"
+    ></i>
+    <app-loading-spinner
+      *ngIf="isLoading"
+      [loading]="isLoading"
+      [borderColour]="'black'"
+      [borderThickness]="3"
+      [componentWidth]="25"
+      [componentHeight]="25"
+    ></app-loading-spinner>
+  </div>
+</div>
