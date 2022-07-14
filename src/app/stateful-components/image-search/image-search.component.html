@@ -1,0 +1,44 @@
+<div class="container">
+  <select
+    class="database-select"
+    [ngClass]="{ 'show-element': !data, 'hide-element': data }"
+    [(ngModel)]="database"
+  >
+    <option *ngFor="let option of databaseOptions">{{ option }}</option>
+  </select>
+  <div class="content-wrapper">
+    <h1
+      class="text text-header"
+      [ngClass]="{ 'show-element': !data, 'hide-element': data }"
+      [ngStyle]="{ 'margin-bottom': data ? 0 : 4 + 'rem' }"
+    >
+      Search for an image
+    </h1>
+    <app-search-bar
+      class="search-bar"
+      [debounceTime]="1000"
+      [isLoading]="isLoading"
+      [placeholder]="'Press enter to search'"
+      (changed)="onSearchTermChanged($event)"
+    ></app-search-bar>
+    <h4
+      class="text text-footer"
+      [ngClass]="{ 'show-element': !data, 'hide-element': data }"
+      [ngStyle]="{ 'margin-top': data ? 0 : 2 + 'rem' }"
+    >
+      There are over 100000 to choose from...
+    </h4>
+    <app-image-search-display
+      class="character-modal"
+      [ngStyle]="{ height: data ? 85 + '%' : 0 }"
+      [sourceUrls]="data?.photos"
+      [pageNumber]="data?.page"
+      [totalPages]="data?.total_results / data?.per_page"
+      [hasNextPage]="data?.next_page"
+      [hasPreviousPage]="data?.prev_page"
+      (nextPage)="onNextPage($event)"
+      (previousPage)="onPreviousPage($event)"
+      (imageClicked)="onImageClicked($event)"
+    ></app-image-search-display>
+  </div>
+</div>

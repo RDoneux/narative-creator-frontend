@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve & npm run proxy",
+    "proxy": "./setupProxy.sh",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -13,12 +14,13 @@
     "@angular/animations": "~14.0.4",
     "@angular/common": "~14.0.4",
     "@angular/compiler": "~14.0.4",
-    "@angular/core": "~14.0.4",
+    "@angular/core": "~14.0.4", 
     "@angular/forms": "~14.0.4",
     "@angular/platform-browser": "~14.0.4",
     "@angular/platform-browser-dynamic": "~14.0.4",
     "@angular/router": "~14.0.4",
     "@kolkov/angular-editor": "^2.1.0",
+    "local-cors-proxy": "^1.1.0",
     "rxjs": "~7.5.5",
     "tslib": "^2.4.0",
     "zone.js": "~0.11.6"

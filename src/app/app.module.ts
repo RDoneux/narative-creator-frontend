@@ -14,12 +14,12 @@ import { TextEditorComponent } from './presentational-components/text-editor/tex
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { CharacterCreatorComponent } from './character-creator/character-creator.component';
 import { ModalComponent } from './presentational-components/modal/modal.component';
-import { CharacterCreatorModalComponent } from './character-creator/character-creator-modal/character-creator-modal.component';
 import { SearchBarComponent } from './presentational-components/search-bar/search-bar.component';
 import { LoadingSpinnerComponent } from './presentational-components/loading-spinner/loading-spinner.component';
 import { PaginationComponent } from './presentational-components/pagination/pagination.component';
-import { ImageSearchComponent } from './presentational-components/image-search-display/image-search/image-search.component';
-import { ImageSearchDisplayComponent } from './presentational-components/image-search-display/image-search-display.component';
+import { ImageSearchComponent } from './stateful-components/image-search/image-search.component';
+import { ImageSearchDisplayComponent } from './stateful-components/image-search/image-search-display/image-search-display.component';
+import { ToggleComponent } from './presentational-components/toggle/toggle.component';
 
 
 @NgModule({
@@ -33,12 +33,12 @@ import { ImageSearchDisplayComponent } from './presentational-components/image-s
     TextEditorComponent,
     CharacterCreatorComponent,
     ModalComponent,
-    CharacterCreatorModalComponent,
     SearchBarComponent,
     LoadingSpinnerComponent,
     PaginationComponent,
     ImageSearchComponent,
     ImageSearchDisplayComponent,
+    ToggleComponent,
   ],
   imports: [
     BrowserModule,

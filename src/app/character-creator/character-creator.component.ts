@@ -9,7 +9,7 @@ export class CharacterCreatorComponent implements OnInit {
   thumbNailUrl: string = '/assets/icons/male-default.jpg';
 
   pageTitle: string = 'Character Creator';
-  showModal: boolean = false;
+  showModal: boolean = true;
 
   constructor() {}
 

@@ -1,10 +1,10 @@
-<div *ngIf="pageNumber" class="navigation-button-wrapper">
+<div *ngIf="pageNumber && totalPages > 0" class="navigation-button-wrapper">
     <i
       [ngStyle]="{ opacity: hasPreviousPage ? 1 : 0 }"
       (click)="onPreviousPage($event)"
       class="fa-solid fa-arrow-left"
     ></i>
-    <span>{{ pageNumber }} / {{ totalPages }}</span>
+    <span>{{ pageNumber }} / {{ totalPages + 1 }}</span>
     <i
       [ngStyle]="{ opacity: hasNextPage ? 1 : 0 }"
       (click)="onNextPage($event)"

@@ -1,0 +1,23 @@
+<div class="container">
+  <div *ngIf="sourceUrls" class="image-wrapper">
+    <img
+      class="image"
+      *ngFor="let url of sourceUrls"
+      loading="lazy"
+      alt="Image not found"
+      src="{{ url.src.large }}"
+      (click)="onImageClick(url.src.large)"
+    />
+    <span *ngIf="!sourceUrls.length" class="no-results">No results</span>
+  </div>
+  <div class="pagination-wrapper">
+    <app-pagination
+      [pageNumber]="pageNumber"
+      [hasNextPage]="hasNextPage"
+      [hasPreviousPage]="hasPreviousPage"
+      [totalPages]="totalPagesRounded"
+      (nextPage)="onNextPage($event)"
+      (previousPage)="onPreviousPage($event)"
+    ></app-pagination>
+  </div>
+</div>

@@ -25,3 +25,14 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Troubleshooting
+
+##### CORS error when accessing data from ArtStation
+
+Due to some issues with localhost proxys when fetching data from http://www.artstation.com/api/v2/search/projects.json, a temporary fix has been introduced for development only. A proxy is created in 'setupProxy.sh', and this file is run at startup.
+
+If you are seeing a CORS error:
+- Make sure you're starting the app using 'npm run start'. ng serve won't start the proxy.
+- Check 'package.json' is running 'setupProxy.sh' at startup
+- Check 'setupProxy.sh' exists
