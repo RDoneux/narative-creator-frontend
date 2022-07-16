@@ -1,17 +1,18 @@
+@import "index";
+
 @font-face {
-  font-family: 'main-cursive-font';
-  src: asset-url('/Splash/Splash-Regular.ttf') format('ttf');
+  font-family: "main-cursive-font";
+  src: asset-url("/Splash/Splash-Regular.ttf") format("ttf");
 }
 
 .container {
+  overflow-x: hidden;
 
-    overflow-x: hidden;
-
-    padding: 1rem 0;
+  padding: 1rem 0;
 
   .wrapper {
-    font-size: 3.5rem;
-    padding: .5rem;
+    font-size: 2rem;
+    padding: 0.5rem;
 
     display: inline-block;
     width: 80%;
@@ -21,68 +22,63 @@
 
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    border-left: 10px solid rgba(0,0,0,.4);
+    border-left: 10px solid rgba(0, 0, 0, 0.4);
 
-    box-shadow: 4px 4px 3px rgba(0,0,0,.4);
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.4);
 
     transition: transform 400ms ease-in-out, opacity 400ms linear;
 
     position: relative;
 
-    font-family: 'Abel', sans-serif;
-    font-family: 'The Nautigal', cursive
-
+    font-family: $theme-font;
   }
 
+  .chevron {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.7rem 1rem;
+    font-size: 1.7rem;
+
+    display: inline-block;
+    height: 100%;
+
+    opacity: 0;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    transition: opacity 200ms ease-in-out;
+
+    .fa-solid {
+      transition: transform 400ms ease-in-out;
+    }
+  }
+
+  &:hover {
     .chevron {
-      position: absolute;
-      right: 0;
-      top: 0;
-      padding: 1.5rem 1rem;
-      font-size: 2.2rem;
-
-      display: inline-block;
-      height: 100%;
-
-      opacity: 0;
-
-      background: rgba(0, 0, 0, 0.4);
-
-      border-top-right-radius: 20px;
-      border-bottom-right-radius: 20px;
-
-      transition: opacity 200ms ease-in-out;
-
-      .fa-solid {
-        transition: transform 400ms ease-in-out;
-      }
-
-    }
-
-    &:hover {
-      .chevron {
-        opacity: 1;
-      }
+      opacity: 1;
     }
   }
-
+}
 
 .hide {
-    transform: translateX(calc(-100% + 3rem));
-    opacity: .2;
-    .chevron {
-        .fa-solid {
-            transform: rotateY(180deg);
-        }
+  transform: translateX(calc(-100% + 3rem));
+  opacity: 0.2;
+  .chevron {
+    .fa-solid {
+      transform: rotateY(180deg);
     }
-
+  }
 }
 
 .show {
-    transform: translateX(0);
-    .chevron {
-        .fa-solid {
-            transform: rotateY(0deg);
-        }
+  transform: translateX(0);
+  .chevron {
+    .fa-solid {
+      transform: rotateY(0deg);
     }
+  }
 }

@@ -1,5 +1,4 @@
-$border: rgb(112, 170, 162);
-$background: rgb(112, 170, 162);
+@import 'index';
 
 .toggle-container {
   width: 3.5rem;
@@ -7,9 +6,9 @@ $background: rgb(112, 170, 162);
 
   border-radius: 1.5rem;
 
-  background: $background;
+  background: $theme-background;
 
-  border: 0.2rem solid $border;
+  border: 0.2rem solid $theme-background;
 
   position: relative;
 

@@ -1,3 +1,5 @@
+@import 'index';
+
 .container {
   width: 80vw;
   height: 80vh;
@@ -10,7 +12,7 @@
     position: absolute;
 
     padding: 0.2rem 0.8rem;
-    font-family: "Edu TAS Beginner", cursive;
+    font-family: $theme-font;
     font-size: 1.1rem;
   }
 
@@ -35,7 +37,7 @@
     .text-header,
     .text-footer {
       text-align: center;
-      font-family: "Edu TAS Beginner", cursive;
+      font-family: $theme-font;
     }
 
     .text {

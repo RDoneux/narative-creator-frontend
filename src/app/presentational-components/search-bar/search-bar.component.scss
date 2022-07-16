@@ -1,3 +1,5 @@
+@import 'index';
+
 .search-bar-wrapper {
   border-radius: 1.4rem;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
@@ -15,7 +17,7 @@
     width: 90%;
   
     padding-left: 1.5rem;
-    font-family: 'Edu TAS Beginner', cursive;
+    font-family: $theme-background;
   }
 
   .search-button-wrapper {

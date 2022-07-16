@@ -1,3 +1,5 @@
+@import 'index';
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -15,7 +17,7 @@
       // text-align: right;
       padding: 0.2rem 1rem;
       font-size: 1.5rem;
-      font-family: "Edu TAS Beginner", cursive;
+      font-family: $theme-font;
       color: gray;
       background: transparent;
       position: absolute;
