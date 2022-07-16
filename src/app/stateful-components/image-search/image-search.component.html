@@ -16,7 +16,6 @@
     </h1>
     <app-search-bar
       class="search-bar"
-      [debounceTime]="1000"
       [isLoading]="isLoading"
       [placeholder]="'Press enter to search'"
       (changed)="onSearchTermChanged($event)"

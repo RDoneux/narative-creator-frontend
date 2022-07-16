@@ -6,27 +6,6 @@ import { Injectable } from '@angular/core';
 export class UtilsService {
   constructor() {}
 
-  // debounce<A = unknown, R = void>(
-  //   fn: (args: A) => R,
-  //   ms: number
-  // ): [(args: A) => Promise<R>, () => void] {
-  //   let timer: NodeJS.Timeout;
-
-  //   const debouncedFunction = (args: A): Promise<R> =>
-  //     new Promise((resolve) => {
-  //       if (timer) {
-  //         clearTimeout(timer);
-  //       }
-  //       timer = setTimeout(() => {
-  //         resolve(fn(args));
-  //       }, ms);
-  //     });
-  //   const teardown = () => {
-  //     clearTimeout(timer);
-  //   };
-  //   return [debouncedFunction, teardown];
-  // }
-
   debounce = <F extends (...args: any[]) => any>(
     func: F,
     waitFor: number

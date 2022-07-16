@@ -20,6 +20,7 @@ import { PaginationComponent } from './presentational-components/pagination/pagi
 import { ImageSearchComponent } from './stateful-components/image-search/image-search.component';
 import { ImageSearchDisplayComponent } from './stateful-components/image-search/image-search-display/image-search-display.component';
 import { ToggleComponent } from './presentational-components/toggle/toggle.component';
+import { CharacterBioComponent } from './character-creator/character-bio/character-bio.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { ToggleComponent } from './presentational-components/toggle/toggle.compo
     ImageSearchComponent,
     ImageSearchDisplayComponent,
     ToggleComponent,
+    CharacterBioComponent,
   ],
   imports: [
     BrowserModule,

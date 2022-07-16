@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { ImageService } from 'src/app/services/image/image.service';
+import { ImageService } from './image.service';
 
 @Component({
   selector: 'app-image-search',
@@ -8,7 +8,7 @@ import { ImageService } from 'src/app/services/image/image.service';
 })
 export class ImageSearchComponent {
   isLoading: boolean = false;
-  data: any;
+  data: any = undefined;
   database: 'Art Station' | 'Pexels' = 'Art Station';
   databaseOptions: string[] = ['Art Station', 'Pexels'];
   pageNumber: number = 1;
@@ -31,7 +31,7 @@ export class ImageSearchComponent {
         break;
       case 'Art Station':
         this.imageService
-          .searchArtStation([event], this.pageNumber, 15)
+          .searchArtStationProxy([event], this.pageNumber, 15)
           .subscribe((data: any) => {
             this.data = this.convertArtStationObject(data, this.pageNumber);
             this.isLoading = false;
@@ -50,7 +50,7 @@ export class ImageSearchComponent {
         break;
       case 'Art Station':
         this.imageService
-          .searchArtStation([this.searchTerm], this.pageNumber, 15)
+          .searchArtStationProxy([this.searchTerm], this.pageNumber, 15)
           .subscribe((data: any) => {
             this.data = this.convertArtStationObject(data, this.pageNumber);
             this.isLoading = false;
@@ -69,21 +69,20 @@ export class ImageSearchComponent {
         break;
       case 'Art Station':
         this.imageService
-          .searchArtStation([this.searchTerm], this.pageNumber, 15)
+          .searchArtStationProxy([this.searchTerm], this.pageNumber, 15)
           .subscribe((data: any) => {
             this.data = this.convertArtStationObject(data, this.pageNumber);
             this.isLoading = false;
           });
         break;
     }
-    this.pageNumber--;
   }
 
   onImageClicked(url: string) {
     this.imageSelected.emit(url);
   }
 
-  private convertArtStationObject(data: any, pageNumber: number) {
+  convertArtStationObject(data: any, pageNumber: number) {
     var images: any = {};
     images.photos = [];
     images.page = pageNumber;

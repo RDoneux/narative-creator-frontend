@@ -100,7 +100,6 @@
       }
     }
   },
-  "defaultProject": "narative-creator-frontend",
   "cli": {
     "analytics": "9ff28fe3-709d-4700-8b67-29745e712eff"
   }

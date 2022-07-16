@@ -8,9 +8,8 @@ describe('CharacterCreatorComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CharacterCreatorComponent ]
-    })
-    .compileComponents();
+      declarations: [CharacterCreatorComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CharacterCreatorComponent);
     component = fixture.componentInstance;
@@ -19,5 +18,43 @@ describe('CharacterCreatorComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('modal control', () => {
+    it('should close modal when method is called', () => {
+      component.showModal = true;
+      spyOn(component, 'onCloseModal').and.callThrough();
+
+      expect(component.onCloseModal).not.toHaveBeenCalled();
+      component.onCloseModal();
+      expect(component.onCloseModal).toHaveBeenCalledTimes(1);
+      expect(component.showModal).toBeFalse();
+    });
+    it('should open modal when method is called', () => {
+      component.showModal = false;
+      spyOn(component, 'onChangeCharacterThumbnail').and.callThrough();
+
+      expect(component.onChangeCharacterThumbnail).not.toHaveBeenCalled();
+      component.onChangeCharacterThumbnail(new Event(''));
+      expect(component.onChangeCharacterThumbnail).toHaveBeenCalledTimes(1);
+      expect(component.showModal).toBeTrue();
+    });
+    it('should set thumbnail url and close modal on method call', () => {
+      const testUrl = 'test-url';
+
+      expect(component.thumbNailUrl).toEqual('/assets/icons/male-default.jpg');
+
+      component.showModal = true;
+      spyOn(component, 'onCloseModal').and.callThrough();
+      spyOn(component, 'onImageChanged').and.callThrough();
+
+      expect(component.onCloseModal).not.toHaveBeenCalled();
+      expect(component.onImageChanged).not.toHaveBeenCalled();
+      component.onImageChanged(testUrl);
+
+      expect(component.onCloseModal).toHaveBeenCalledTimes(1);
+      expect(component.onImageChanged).toHaveBeenCalledOnceWith(testUrl);
+      expect(component.thumbNailUrl).toEqual(testUrl);
+    });
   });
 });

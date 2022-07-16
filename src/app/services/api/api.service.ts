@@ -26,7 +26,7 @@ export class ApiService {
   }
 
   createRequest(options: any) {
-    const headers = options?.headers ? new HttpHeaders({...options?.headers}) : {}
+    const headers = options?.headers ? new HttpHeaders({...options.headers}) : {}
     return {...options, headers: headers}
   }
 }

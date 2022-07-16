@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiService } from '../api/api.service';
+import { ApiService } from '../../services/api/api.service';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +18,7 @@ export class ImageService {
     });
   }
 
-  searchArtStation(
+  searchArtStationProxy(
     queryParams: string[],
     pageNumber: number = 1,
     perPage: number = 15
@@ -27,12 +27,29 @@ export class ImageService {
       'The following url call is temporary: ' +
         "'http://localhost:8010/proxy'" +
         ' whilst in development. This will need to be replaced with: ' +
-        "' http://www.artstation.com/api/v2/search/projects.json'" +
+        "'http://www.artstation.com/api/v2/search/projects.json'" +
         ' in production'
     );
 
     return this.api.get(
       'http://localhost:8010/proxy', // temporary whilst in development
+      {
+        params: {
+          page: pageNumber,
+          per_page: perPage,
+          query: queryParams.join(' '),
+        },
+      }
+    );
+  }
+
+  searchArtStation(
+    queryParams: string[],
+    pageNumber: number = 1,
+    perPage: number = 15
+  ) {
+    return this.api.get(
+      'http://www.artstation.com/api/v2/search/projects.json',
       {
         params: {
           page: pageNumber,

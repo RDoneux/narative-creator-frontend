@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api/api.service';
-import { ImageService } from '../services/image/image.service';
+import { ImageService } from '../stateful-components/image-search/image.service';
 
 const images = {
   page: 1,
@@ -455,34 +455,15 @@ const images = {
 export class ComponentsComponent implements OnInit {
   buttonLoading: boolean = false;
   images = images.photos;
-  constructor(private image: ImageService, private http: ApiService) {
-
-  }
+  constructor(private image: ImageService, private http: ApiService) {}
 
   ngOnInit(): void {}
 
   onClick() {
-    this.image.searchArtStation(['waterfall', 'person']).subscribe((data) => {
+    this.image.searchArtStationProxy(['waterfall', 'person']).subscribe((data) => {
       console.log(data);
       this.buttonLoading = false;
     });
     this.buttonLoading = true;
-  }
-
-  render() {
-    const params = {
-      model: 'https://example.com/model.glb',
-      scene: 'fullbody-portrait-v1',
-      armature: 'ArmatureTargetMale',
-      blendShapes: {},
-    };
-    const http = new XMLHttpRequest();
-    http.open('POST', 'https://render.readyplayer.me/render');
-    http.setRequestHeader('Content-type', 'application/json');
-    http.send(JSON.stringify(params));
-    http.onload = function () {
-      // Do whatever with response
-      alert(http.responseText);
-    };
   }
 }

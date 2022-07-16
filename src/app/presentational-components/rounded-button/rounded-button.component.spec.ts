@@ -8,9 +8,8 @@ describe('RoundedButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RoundedButtonComponent ]
-    })
-    .compileComponents();
+      declarations: [RoundedButtonComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -23,14 +22,21 @@ describe('RoundedButtonComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should emit click event on click', () => {
-    const buttonSpy = spyOn(component.clicked, 'emit');
+  it('should test default values', () => {
+    expect(component.isLoading).toBeFalse();
+  })
 
-    const testClickEvent = new Event('click');
+  it('should emit click event on click', () => {
+    const testClickEvent = new Event('');
+
+    spyOn(component.clicked, 'emit').and.callThrough();
+    spyOn(component, 'onClick').and.callThrough();
+
+    expect(component.onClick).not.toHaveBeenCalled();
+    expect(component.clicked.emit).not.toHaveBeenCalled();
 
     component.onClick(testClickEvent);
 
-    expect(buttonSpy).toHaveBeenCalledOnceWith(testClickEvent);
-
-  })
+    expect(component.onClick).toHaveBeenCalledOnceWith(testClickEvent);
+  });
 });

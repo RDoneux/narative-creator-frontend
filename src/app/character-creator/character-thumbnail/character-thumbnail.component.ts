@@ -3,10 +3,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-character-thumbnail',
   templateUrl: './character-thumbnail.component.html',
-  styleUrls: ['./character-thumbnail.component.scss']
+  styleUrls: ['./character-thumbnail.component.scss'],
 })
-export class CharacterThumbnailComponent implements OnInit {
-
+export class CharacterThumbnailComponent {
   @Input() source: string | undefined = undefined;
   @Input() altText: string | undefined = 'Image not found';
   @Input() position: string | undefined = undefined;
@@ -15,17 +14,9 @@ export class CharacterThumbnailComponent implements OnInit {
 
   @Output() buttonClicked: EventEmitter<Event> = new EventEmitter();
 
-  constructor() { 
-  }
-
-  ngOnInit(): void {
-
-  }
+  constructor() {}
 
   onButtonClick(event: Event) {
     this.buttonClicked.emit(event);
   }
-
-
-
 }

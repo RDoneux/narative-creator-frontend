@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { UtilsService } from './utils.service';
+import { SearchBarComponent } from './../presentational-components/search-bar/search-bar.component';
 
 describe('UtilsService', () => {
   let service: UtilsService;

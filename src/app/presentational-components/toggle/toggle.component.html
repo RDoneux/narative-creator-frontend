@@ -1,1 +1,7 @@
-<p>toggle works!</p>
+<div class="toggle-container" (click)="toggleComponent()">
+  <label>
+    {{ label }}
+    <input class="toggle-outline" type="checkbox" [checked]="checked" />
+  </label>
+  <div class="toggle" [ngClass]="{'active': checked, 'inactive': !checked}"></div>
+</div>

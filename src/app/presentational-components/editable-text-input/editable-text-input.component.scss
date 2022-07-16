@@ -1,30 +1,30 @@
-.styled-input, 
+.styled-input,
 .style-input:focus-visible {
+  width: 100%;
 
-    width: 100%;
+  padding: 0.8rem 1.5rem;
 
-    padding: .8rem 1.5rem;
+  border: 2px solid rgb(0, 0, 0);
+  outline: none;
 
-    border: 2px solid rgb(0, 0, 0);
-    outline: none;
+  border-left: 1px solid rgba(0, 0, 0, 0);
+  border-right: 1px solid rgba(0, 0, 0, 0);
 
-    border-left: 1px solid rgba(0,0,0,0);
-    border-right: 1px solid rgba(0,0,0,0);
+  font-size: 1.5rem;
 
-    font-size: 1.5rem;
+  text-align: center;
 
-    text-align: center;
+  transition: border-radius 300ms ease-in-out, border-color 100ms linear 200ms,
+    box-shadow 300ms linear;
 
-    transition: border-radius 300ms ease-in-out, border-color 100ms linear 200ms, box-shadow 300ms linear;
+  text-overflow: ellipsis;
 
-    text-overflow: ellipsis;
+    font-family: "Edu TAS Beginner", cursive;
 
-    &:focus-visible {
-        
-        border: 2px solid black;
-        border-radius: 30px;
+  &:focus-visible {
+    border: 2px solid black;
+    border-radius: 30px;
 
-        box-shadow: 0 3px 2px #a9a9a9;
-
-    }
+    box-shadow: 0 3px 2px #a9a9a9;
+  }
 }

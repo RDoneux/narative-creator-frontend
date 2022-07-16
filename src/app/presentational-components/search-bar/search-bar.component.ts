@@ -6,11 +6,9 @@ import { UtilsService } from 'src/app/services/utils.service';
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.scss'],
 })
-export class SearchBarComponent implements OnInit {
-  value: string | undefined = undefined;
-  
+export class SearchBarComponent {
+  @Input() value: string | undefined = undefined;
   @Input() placeholder: string = '';
-  @Input() debounceTime: number = 1000;
   @Input() isLoading: boolean = false;
   @Input() searchAsType: boolean = false;
 
@@ -18,12 +16,11 @@ export class SearchBarComponent implements OnInit {
 
   constructor(private utils: UtilsService) {}
 
-  ngOnInit(): void {
+  debounceOnChange(timeInMs: number) {
     this.onChange = this.utils.debounce<typeof this.onChange>(
       this.onChange,
-      this.debounceTime
+      timeInMs
     );
-
   }
 
   submitted = () => {
@@ -32,7 +29,7 @@ export class SearchBarComponent implements OnInit {
   };
 
   onChange = (event: string) => {
-    if (!event || !this.searchAsType || this.isLoading) return;
+    if (!this.searchAsType || !event || this.isLoading) return;
     this.changed.emit(event);
   };
 }
