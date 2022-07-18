@@ -21,6 +21,8 @@ import { ImageSearchComponent } from './stateful-components/image-search/image-s
 import { ImageSearchDisplayComponent } from './stateful-components/image-search/image-search-display/image-search-display.component';
 import { ToggleComponent } from './presentational-components/toggle/toggle.component';
 import { CharacterBioComponent } from './character-creator/character-bio/character-bio.component';
+import { StatisticsComponent } from './stateful-components/statistics/statistics.component';
+import { StatisticsItemComponent } from './stateful-components/statistics/statistics-item/statistics-item.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { CharacterBioComponent } from './character-creator/character-bio/charact
     ImageSearchDisplayComponent,
     ToggleComponent,
     CharacterBioComponent,
+    StatisticsComponent,
+    StatisticsItemComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,49 @@
+@import "index";
+
+$border: 1px solid rgb(70, 70, 70);
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+
+  border-top: $border;
+
+  padding: 0.8rem 1rem;
+
+  .item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem 0;
+    font-family: $theme-font;
+  }
+
+  .title {
+    font-size: 1.1rem;
+    font-weight: 900;
+  }
+
+  &:hover,
+  &:active {
+    .value-wrapper {
+      .change-wrapper {
+        width: 3.5rem;
+      }
+    }
+  }
+
+  .value-wrapper {
+    display: flex;
+    justify-content: space-between;
+    .change-wrapper {
+      transition: width 200ms ease-in-out;
+      display: flex;
+      width: 0;
+      justify-content: space-evenly;
+      align-items: center;
+      overflow: hidden;
+    }
+  }
+}

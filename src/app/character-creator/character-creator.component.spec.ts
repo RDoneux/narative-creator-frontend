@@ -57,4 +57,28 @@ describe('CharacterCreatorComponent', () => {
       expect(component.thumbNailUrl).toEqual(testUrl);
     });
   });
+  describe('stats changed', () => {
+    it('should set stats equal to changed value', () => {
+      const statsValue = [
+        { label: 'Strength', abilityScore: 1 },
+        { label: 'Dexterity', abilityScore: 1 },
+        { label: 'Constitution', abilityScore: 1 },
+        { label: 'Intelligence', abilityScore: 1 },
+        { label: 'Wisdom', abilityScore: 1 },
+        { label: 'Charisma', abilityScore: 1 },
+      ];
+      const expectedResult = [
+        { label: 'Strength-new', abilityScore: 2 },
+        { label: 'Dexterity-new', abilityScore: 3 },
+        { label: 'Constitution-new', abilityScore: 4 },
+        { label: 'Intelligence-new', abilityScore: 5 },
+        { label: 'Wisdom-new', abilityScore: 6 },
+        { label: 'Charisma-new', abilityScore: 7 },
+      ];
+      spyOn(component, 'onStatsChanged').and.callThrough();
+      expect(component.statistics).toEqual(statsValue);
+      component.onStatsChanged(expectedResult);
+      expect(component.statistics).toEqual(expectedResult);
+    });
+  });
 });

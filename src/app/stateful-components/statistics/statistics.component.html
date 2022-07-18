@@ -1,0 +1,11 @@
+<div class="container">
+  <h4 class="title">Character Stats</h4>
+  <app-statistics-item
+    *ngFor="let stat of stats"
+    [label]="stat.label"
+    [abilityScore]="stat.abilityScore"
+    [abilityModifier]="stat.abilityModifier"
+    (scoreIncreased)="onScoreIncreased($event)"
+    (scoreDecreased)="onScoreDecreased($event)"
+  ></app-statistics-item>
+</div>

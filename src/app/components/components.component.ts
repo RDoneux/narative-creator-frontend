@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api/api.service';
 import { ImageService } from '../stateful-components/image-search/image.service';
+import { StatisticsConfig } from '../stateful-components/statistics/stastistics.interface';
 
 const images = {
   page: 1,
@@ -455,15 +456,26 @@ const images = {
 export class ComponentsComponent implements OnInit {
   buttonLoading: boolean = false;
   images = images.photos;
+
+  stats: StatisticsConfig[] = [
+    { label: 'Strength', abilityScore: 4 },
+    { label: 'Dexterity', abilityScore: 20 },
+    { label: 'Constitution', abilityScore: 9 },
+    { label: 'Intelligence', abilityScore: 11 },
+    { label: 'Wisdom', abilityScore: 3 },
+    { label: 'Charisma', abilityScore: 16 },
+  ];
   constructor(private image: ImageService, private http: ApiService) {}
 
   ngOnInit(): void {}
 
   onClick() {
-    this.image.searchArtStationProxy(['waterfall', 'person']).subscribe((data) => {
-      console.log(data);
-      this.buttonLoading = false;
-    });
+    this.image
+      .searchArtStationProxy(['waterfall', 'person'])
+      .subscribe((data) => {
+        console.log(data);
+        this.buttonLoading = false;
+      });
     this.buttonLoading = true;
   }
 }

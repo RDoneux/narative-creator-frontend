@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StatisticsConfig } from '../stateful-components/statistics/stastistics.interface';
 
 @Component({
   selector: 'app-character-creator',
@@ -10,6 +11,15 @@ export class CharacterCreatorComponent implements OnInit {
 
   pageTitle: string = 'Character Creator';
   showModal: boolean = false;
+
+  statistics: StatisticsConfig[] = [
+    { label: 'Strength', abilityScore: 1 },
+    { label: 'Dexterity', abilityScore: 1 },
+    { label: 'Constitution', abilityScore: 1 },
+    { label: 'Intelligence', abilityScore: 1 },
+    { label: 'Wisdom', abilityScore: 1 },
+    { label: 'Charisma', abilityScore: 1 },
+  ];
 
   constructor() {}
 
@@ -26,5 +36,9 @@ export class CharacterCreatorComponent implements OnInit {
   onImageChanged(url: string) {
     this.onCloseModal();
     this.thumbNailUrl = url;
+  }
+
+  onStatsChanged(stats: StatisticsConfig[]) {
+    this.statistics = stats;
   }
 }
