@@ -13,4 +13,8 @@
     [placeholder]="'Character\'s name'"
   ></app-editable-text-input>
   <app-character-bio class="character-bio"></app-character-bio>
+  <app-statistics
+    [stats]="statistics"
+    (changed)="onStatsChanged($event)"
+  ></app-statistics>
 </div>

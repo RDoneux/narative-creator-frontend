@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="item title">
+    <span>Skill name: </span><span>{{ label }}</span>
+  </div>
+  <div class="item">
+    <span>Ability Score: </span>
+    <span class="value-wrapper">
+      {{ abilityScore }}
+      <span class="change-wrapper">
+        <i class="fa-solid fa-plus" (click)="onScoreIncreased()"></i>
+        <i class="fa-solid fa-minus" (click)="onScoreDecreased()"></i>
+      </span>
+    </span>
+  </div>
+  <div class="item">
+    <span>Ability Modifier: </span
+    ><span *ngIf="abilityModifier != undefined"
+      >{{ abilityModifier >= 0 ? "+" : "" }}{{ abilityModifier }}
+    </span>
+  </div>
+</div>

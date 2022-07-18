@@ -51,4 +51,17 @@
   <div class="component-wrapper">
     <app-toggle></app-toggle>
   </div>
+
+  <div class="component-wrapper">
+    <app-statistics-item
+      class="statistics-item"
+      [label]="'test-label'"
+      [abilityScore]="3"
+    ></app-statistics-item>
+  </div>
+
+  <div class="component-wrapper">
+    <app-statistics class="stastistics-component" [stats]="stats">
+    </app-statistics>
+  </div>
 </div>
